@@ -40,7 +40,7 @@ const startbtn = document.getElementById('start-btn');
 startbtn.addEventListener('click', addWinnersNum);
 
 
-function requestRandomNumbers(count, maxNumber) {
+function requestServer(count, maxNumber) {
     const requestUrl = `http://www.random.org/integers/?num=${count}&min=1&max=${maxNumber}&col=1&base=10&format=plain&rnd=yes`;
 
     return new Promise((resolve, reject) => {
@@ -96,7 +96,7 @@ function addWinnersNum() {
     const winnersNum = parseInt(winnersInput.value);
     const maxNumber = participants.length;
 
-    requestRandomNumbers(winnersNum, maxNumber)
+    requestServer(winnersNum, maxNumber)
         .then(num => {
             winnersOutput.innerHTML = num.join(' ');
 
