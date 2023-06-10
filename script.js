@@ -41,7 +41,7 @@ startbtn.addEventListener('click', addWinnersNum);
 
 
 function requestServer(count, maxNumber) {
-    const requestUrl = `http://www.random.org/integers/?num=${count}&min=1&max=${maxNumber}&col=1&base=10&format=plain&rnd=yes`;
+    const requestUrl = `https://www.random.org/integers/?num=${count}&min=1&max=${maxNumber}&col=1&base=10&format=plain&rnd=yes`;
 
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
